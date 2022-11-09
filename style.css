@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@400;500&display=swap");
+:root {
+  --dark-color: #181719;
+  --white-color: #ffffff;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  color: var(--white-color);
+  background-color: var(--dark-color);
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.2rem 7.7rem 0 7.7rem;
+}
+a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul {
+  list-style: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+nav ul.main-menu > .menu-item {
+  display: inline-block;
+  margin-left: 8.6rem;
+  padding-bottom: 0.8rem;
+  /* border-bottom: 2px solid; */
+  cursor: pointer;
+}
+nav ul.main-menu > .menu-item:hover {
+  border-bottom: 2px solid var(--white-color);
+}
+
+nav ul.main-menu > .menu-item.active {
+  border-bottom: 2px solid var(--white-color);
+}
+nav .mobile-menu-container {
+  transition: 1s;
+  display: none;
+  padding: 1.2rem;
+  position: absolute;
+  grid-template-rows: 40px 1fr;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark-color);
+  z-index: 10;
+}
+nav .mobile-menu-container .xmark {
+  font-size: 3rem;
+  text-align: right;
+}
+nav .mobile-menu-container .mobile-menu {
+  justify-self: center;
+  align-self: center;
+  font-size: 1.8rem;
+  text-align: center;
+}
+nav .mobile-menu-container .mobile-menu .menu-item {
+  margin-bottom: 3.2rem;
+}
+nav .mobile-menu-container .mobile-menu .menu-item a {
+  padding-bottom: 0.8rem;
+}
+nav .mobile-menu-container .mobile-menu .menu-item a:hover {
+  border-bottom: 2px solid var(--white-color);
+}
+nav .mobile-menu-container .mobile-menu .menu-item.active {
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--white-color);
+}
+.logo {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  padding: 0.8rem;
+  border: 1px solid var(--white-color);
+  height: 3.4rem;
+}
+header .hamburger {
+  display: none;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 58.6rem;
+}
+main > aside {
+  place-self: center;
+}
+main h1 {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  font-size: 4.8rem;
+  margin-bottom: 4rem;
+}
+main p {
+  font-size: 2.4rem;
+  margin-bottom: 4.8rem;
+  line-height: 2.9rem;
+  width: 70%;
+}
+main a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--white-color);
+  margin-bottom: 0.8rem;
+}
+a.read-more::after {
+  content: " →";
+}
+a.read-more:hover {
+  border-bottom: 2px solid var(--white-color);
+}
+.images {
+  background-image: url(./photo1.png);
+  position: relative;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.text-image {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 41rem;
+  height: 18.9rem;
+  padding: 2.6rem;
+  top: 80%;
+  right: 1.5%;
+  /* overflow: hidden; */
+}
+.text-image .header-img {
+  display: grid;
+  grid-template-columns: 6.4rem 1fr;
+  grid-template-rows: 3.2rem 3.2rem;
+  grid-template-areas:
+    "avatar name"
+    "avatar prof";
+  margin-bottom: 1.2rem;
+}
+.text-image .header-img .avatar {
+  width: 4.8rem;
+  border-radius: 50%;
+  grid-area: avatar;
+  justify-self: center;
+}
+.text-image .header-img .name {
+  font-size: 1.4rem;
+}
+.text-image .header-img .title {
+  font-size: 1.2rem;
+  color: #828282;
+}
+.text-image .body-img {
+  font-family: "Lora", serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+footer {
+  text-align: center;
+}
+footer a {
+  font-weight: bold;
+}
+@media (max-width: 450px) {
+  body {
+    display: grid;
+    grid-template-rows: 40px 1fr 40px;
+    padding: 1.2rem;
+  }
+  .main-menu {
+    display: none;
+  }
+  header .hamburger {
+    font-size: 3rem;
+    display: block;
+  }
+  main {
+    height: 80%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr;
+  }
+  main h1 {
+    font-size: 3.6rem;
+  }
+  main p {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    width: 80%;
+  }
+  main a {
+    font-size: 1.4rem;
+  }
+  main > aside {
+    place-self: center;
+  }
+  .text-image {
+    width: 30rem;
+    height: 13.8rem;
+    padding: 1rem;
+  }
+  .text-image .header-img {
+    display: grid;
+    grid-template-columns: 6.4rem 1fr;
+    grid-template-rows: 3.2rem 3.2rem;
+    grid-template-areas:
+      "avatar name"
+      "avatar prof";
+    margin-bottom: 1.2rem;
+  }
+  .text-image .header-img .avatar {
+    width: 3.6rem;
+    border-radius: 50%;
+    grid-area: avatar;
+    justify-self: center;
+  }
+  .text-image .header-img .name {
+    font-size: 1.4rem;
+  }
+  .text-image .header-img .title {
+    font-size: 1.2rem;
+    color: #828282;
+  }
+  .text-image .body-img {
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  nav .mobile-menu-container.grid {
+    display: grid;
+  }
+}

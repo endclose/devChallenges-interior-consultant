@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interior Consultant</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">This interior</div>
+      <nav>
+        <ul class="main-menu">
+          <li class="menu-item active">Home</li>
+          <li class="menu-item">Collection</li>
+          <li class="menu-item">About</li>
+          <li class="menu-item">Contact</li>
+        </ul>
+        <div class="mobile-menu-container">
+          <div id="close-mobile-menu" class="xmark">
+            <i class="fa fa-xmark"></i>
+          </div>
+          <ul class="mobile-menu">
+            <li class="menu-item active"><a href="">Home</a></li>
+            <li class="menu-item"><a href="#">Collection</a></li>
+            <li class="menu-item"><a href="#">About</a></li>
+            <li class="menu-item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="hamburger-mobile" class="hamburger">
+        <i class="fa fa-bars"></i>
+      </div>
+    </header>
+    <main>
+      <aside>
+        <h1>Modern interior</h1>
+        <p>
+          A full-Service residential & commercial interior design and staging
+          company offering professional organizing & <br />
+          eco-services.
+        </p>
+        <a href="#" class="read-more">Read more</a>
+      </aside>
+      <div class="images">
+        <div class="text-image">
+          <div class="header-img">
+            <img src="./photo2.png" alt="Aliza Webber" class="avatar" />
+            <h2 class="name">Aliza Webber</h2>
+            <p class="title">Interior designer</p>
+          </div>
+          <div class="body-img">
+            Designed in 2020 by <br />
+            Aliza Webber
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>created by <a href="https://devchallenges.io/portfolio/endclose">endclose</a> - devChallenges.io</footer>
+    <script>
+      const hamburger = document.getElementById("hamburger-mobile");
+      const closeMarkMobile = document.getElementById("close-mobile-menu");
+      const mobileMenuContainer = document.querySelector(
+        "nav .mobile-menu-container"
+      );
+      hamburger.addEventListener("click", () => {
+        console.log("click");
+        mobileMenuContainer.classList.toggle("grid");
+        // mobileMenuContainer.setAttribute("style", "display:grid;");
+      });
+      closeMarkMobile.addEventListener("click", () => {
+        mobileMenuContainer.classList.remove('grid');
+      });
+    </script>
+  </body>
+</html>
